@@ -41,4 +41,36 @@ def open_project_folder():
     os.system("explorer C:\\Users\\Desktop\\Chat")
 open_project_folder()
 
+# Vision
+
+# Maps left side keys to right side keys
+# map_keys(['i', 'j', 'k', 'l'], ['up arrow', 'left arrow', 'down arrow', 'right arrow'])
+
+@pressed("f1", "Set macro layers to 0", "any")
+def macro_layer_to_0():
+    macros.set_layer(0)
+macro_layer_to_0()
+
+@pressed("f2", "Set macro layers to 1", "any")
+def macro_layer_to_1():
+    macros.set_layer(1)
+macro_layer_to_1()
+
+# Third optional argument is set to 1-3 which means that this macro only works
+# on layers 1 through 3
+@pressed("p", "Print memes", "1-3")
+def print_memes():
+    print("A Cat.")
+print_memes()
+
 Capslock.start()
+
+
+
+
+
+
+
+
+
+# EOF

@@ -3,7 +3,10 @@ import time
 
 class Macros:
     @staticmethod
-    def register(key, method):
-        Macros.macros[key] = method
+    def register(key, macro):
+        for layer in macro.layers:
+            Macros.macros[layer][key] = macro
 
-Macros.macros = {}
+Macros.macros = [{}] * 10
+
+Macros.layer = 0
