@@ -2,6 +2,9 @@ from decorators import *
 from macros import *
 from windows import *
 from keys import *
+import os
+
+os.system("title BetterLock")
 
 Windows.start()
 

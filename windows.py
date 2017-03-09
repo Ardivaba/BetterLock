@@ -7,6 +7,11 @@ class Windows:
         caps.start()
         Windows.caps = caps
 
+    @staticmethod
+    def send_string(string):
+        shell = win32com.client.Dispatch("WScript.Shell")
+        shell.SendKeys(string)
+
 #while(True):
 #    if c.has_events():
 #        c.pop()
