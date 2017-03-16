@@ -32,6 +32,29 @@ struct keyboard_key_event {
 vector<keyboard_key_event> keyboard_event_queue;
 keyboard_key_event current_event;
 
+int layer = 0;
+vector<vector<int>> key_maps;
+
+DLLEXPORT void set_layer(int new_layer)
+{
+	layer = new_layer;
+}
+
+DLLEXPORT void map_key(int original_key, int mapped_key, int layer)
+{
+	key_maps[layer][original_key] = mapped_key;
+}
+
+DLLEXPORT void press_key(int key_code)
+{
+	keybd_event(key_code, 0, 0, 0);
+}
+
+DLLEXPORT void release_key(int key_code)
+{
+	keybd_event(key_code, 0, KEYEVENTF_KEYUP, 0);
+}
+
 DLLEXPORT bool event_selected()
 {
 	if (current_event.key_code != -1)

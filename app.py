@@ -1,10 +1,22 @@
 from capslock import *
 import os
+import time
+import keys
 
 #@pressed("", "")
 #def method():
 #    os.system("")
 #method()
+
+@pressed("w", "Open white noise website")
+def open_white_noise_website():
+    os.system("explorer http://onlinetonegenerator.com/432Hz.html")
+open_white_noise_website()
+
+@pressed("i", "Open a super important book")
+def open_a_super_important_book():
+    os.system("explorer C:\\Users\\Kasutaja\\Desktop\\Books\\How to Win Friends and Influence People")
+open_a_super_important_book()
 
 @pressed("y", "Print")
 def print_something():
@@ -41,17 +53,24 @@ def open_project_folder():
     os.system("explorer C:\\Users\\Desktop\\Chat")
 open_project_folder()
 
-# Vision
+@pressed("o", "Open my timetable")
+def open_ois():
+    os.system("explorer http://itcollege.ois.ee/")
+open_ois()
 
-# Maps left side keys to right side keys
-# map_keys(['i', 'j', 'k', 'l'], ['up arrow', 'left arrow', 'down arrow', 'right arrow'])
+@pressed("a", "Open bracket")
+def open_bracket():
+    time.sleep(1)
+    Capslock.press_key("alt")
+    Capslock.press_key("f4")
+open_bracket()
 
-@pressed("f1", "Set macro layers to 0", "any")
+@pressed("f1", "Set macro layers to 0")
 def macro_layer_to_0():
     macros.set_layer(0)
 macro_layer_to_0()
 
-@pressed("f2", "Set macro layers to 1", "any")
+@pressed("f2", "Set macro layers to 1")
 def macro_layer_to_1():
     macros.set_layer(1)
 macro_layer_to_1()
@@ -64,13 +83,3 @@ def print_memes():
 print_memes()
 
 Capslock.start()
-
-
-
-
-
-
-
-
-
-# EOF

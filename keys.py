@@ -1,3 +1,5 @@
+# List of WinAPI keys mapped to strings
+
 keys = {};
 keys["backspace"] = 8;
 keys["tab"] = 9;
