@@ -33,16 +33,21 @@ vector<keyboard_key_event> keyboard_event_queue;
 keyboard_key_event current_event;
 
 int layer = 0;
-vector<vector<int>> key_maps;
+bool forced_unlock = false;
+
+DLLEXPORT void lock_keyboard()
+{
+	forced_unlock = false;
+}
+
+DLLEXPORT void unlock_keyboard()
+{
+	forced_unlock = true;
+}
 
 DLLEXPORT void set_layer(int new_layer)
 {
 	layer = new_layer;
-}
-
-DLLEXPORT void map_key(int original_key, int mapped_key, int layer)
-{
-	key_maps[layer][original_key] = mapped_key;
 }
 
 DLLEXPORT void press_key(int key_code)
@@ -131,7 +136,10 @@ DLLEXPORT LRESULT keyboard_event(int code, WPARAM w_param, LPARAM l_param)
 					printf("Added key: %i to queue.\n", key_event.key_code);
 			}
 
-			return 1;
+			if(forced_unlock)
+				return CallNextHookEx(keyboard_hook, code, w_param, l_param);
+			else
+				return 1;
 		}
 	}
 

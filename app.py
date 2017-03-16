@@ -60,9 +60,9 @@ open_ois()
 
 @pressed("a", "Open bracket")
 def open_bracket():
-    time.sleep(1)
-    Capslock.press_key("alt")
-    Capslock.press_key("f4")
+    Windows.unlock_keyboard()
+    Windows.press_key("d")
+    Windows.lock_keyboard()
 open_bracket()
 
 @pressed("f1", "Set macro layers to 0")
@@ -81,5 +81,8 @@ macro_layer_to_1()
 def print_memes():
     print("A Cat.")
 print_memes()
+
+Windows.lock_keyboard()
+Windows.unlock_keyboard()
 
 Capslock.start()

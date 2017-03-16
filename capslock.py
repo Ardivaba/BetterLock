@@ -29,13 +29,3 @@ class Capslock:
                 for _key, macro in Macros.macros[Macros.layer].items():
                     if key == keys[_key] and Macros.layer in macro.layers:
                         macro.method()
-
-    """Sends key_press event to WinAPI"""
-    @staticmethod
-    def press_key(key_code):
-        Windows.caps.press_key(key_code)
-
-    """Sends key_released event to WinAPI"""
-    @staticmethod
-    def release_key(key_code):
-        Windows.caps.release_key(key_code)

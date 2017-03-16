@@ -1,4 +1,5 @@
 ﻿  BetterLock.cpp
-c:\users\kasutaja\desktop\betterlock\betterlock\betterlock.cpp(116): warning C4018: '<': signed/unsigned mismatch
+c:\users\kasutaja\desktop\betterlock\betterlock\betterlock.cpp(121): warning C4018: '<': signed/unsigned mismatch
+     Creating library C:\Users\Kasutaja\Desktop\BetterLock\BetterLock\Debug\BetterLock.lib and object C:\Users\Kasutaja\Desktop\BetterLock\BetterLock\Debug\BetterLock.exp
   BetterLock.vcxproj -> C:\Users\Kasutaja\Desktop\BetterLock\BetterLock\Debug\BetterLock.dll
   BetterLock.vcxproj -> C:\Users\Kasutaja\Desktop\BetterLock\BetterLock\Debug\BetterLock.pdb (Partial PDB)
