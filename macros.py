@@ -11,6 +11,6 @@ class Macros:
         for layer in macro.layers:
             Macros.macros[layer][key] = macro
 
+# Initializes Macros static class
 Macros.macros = [{}] * 10
-
 Macros.layer = 0

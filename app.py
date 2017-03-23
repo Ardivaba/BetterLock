@@ -2,87 +2,60 @@ from capslock import *
 import os
 import time
 import keys
+from windows import Windows
 
-#@pressed("", "")
-#def method():
-#    os.system("")
-#method()
-
-@pressed("w", "Open white noise website")
-def open_white_noise_website():
-    os.system("explorer http://onlinetonegenerator.com/432Hz.html")
-open_white_noise_website()
-
-@pressed("i", "Open a super important book")
-def open_a_super_important_book():
-    os.system("explorer C:\\Users\\Kasutaja\\Desktop\\Books\\How to Win Friends and Influence People")
-open_a_super_important_book()
-
-@pressed("y", "Print")
-def print_something():
-    print("Hey, here's something")
-print_something()
-
-@pressed("p", "Print Hello World")
-def print_hello_world():
-    print("Hello world...")
-print_hello_world()
-
-@pressed("r", "Open ruby documentation")
-def open_ruby_documentation():
-    os.system("explorer http://ruby-doc.org/")
-open_ruby_documentation()
-
-@pressed("g", "Open google")
-def open_google():
-    os.system("explorer http://google.com/")
-open_google()
-
-@pressed("c", "Open cmd")
-def open_cmd():
-    os.system("start cmd.exe")
-open_cmd()
-
-@pressed("e", "Edit macros")
+@pressed("e", "Edit macros - Opens Atom editor with app.py")
 def edit_macros():
     os.system("atom C:/Users/Kasutaja/Desktop/BetterLock/app.py")
 edit_macros()
 
-@pressed("p", "Open project folder")
-def open_project_folder():
-    os.system("explorer C:\\Users\\Desktop\\Chat")
-open_project_folder()
-
-@pressed("o", "Open my timetable")
-def open_ois():
-    os.system("explorer http://itcollege.ois.ee/")
-open_ois()
-
-@pressed("a", "Open bracket")
-def open_bracket():
+# Map arrow ijkl to arrow keys
+@pressed("i", "Maps i to up")
+def map_i_to_up():
     Windows.unlock_keyboard()
-    Windows.press_key("d")
+    Windows.press_key("up")
+    Windows.release_key("up")
     Windows.lock_keyboard()
-open_bracket()
+map_i_to_up()
 
-@pressed("f1", "Set macro layers to 0")
-def macro_layer_to_0():
-    macros.set_layer(0)
-macro_layer_to_0()
+@pressed("k", "Maps k to down")
+def map_k_to_down():
+    Windows.unlock_keyboard()
+    Windows.press_key("down")
+    Windows.release_key("down")
+    Windows.lock_keyboard()
+map_k_to_down()
 
-@pressed("f2", "Set macro layers to 1")
-def macro_layer_to_1():
-    macros.set_layer(1)
-macro_layer_to_1()
+@pressed("j", "Maps j to left")
+def map_j_to_left():
+    Windows.unlock_keyboard()
+    Windows.press_key("left")
+    Windows.release_key("left")
+    Windows.lock_keyboard()
+map_j_to_left()
 
-# Third optional argument is set to 1-3 which means that this macro only works
-# on layers 1 through 3
-@pressed("p", "Print memes", "1-3")
-def print_memes():
-    print("A Cat.")
-print_memes()
+@pressed("l", "Maps l to left")
+def map_l_to_right():
+    Windows.unlock_keyboard()
+    Windows.press_key("right")
+    Windows.release_key("right")
+    Windows.lock_keyboard()
+map_l_to_right()
 
-Windows.lock_keyboard()
-Windows.unlock_keyboard()
+@pressed("u", "Maps u to backspace")
+def map_u_to_backspace():
+    Windows.unlock_keyboard()
+    Windows.press_key("backspace")
+    Windows.release_key("backspace")
+    Windows.lock_keyboard()
+map_u_to_backspace()
+
+@pressed("o", "Maps o to backspace")
+def map_o_to_tab():
+    Windows.unlock_keyboard()
+    Windows.press_key("tab")
+    Windows.release_key("tab")
+    Windows.lock_keyboard()
+map_o_to_tab()
 
 Capslock.start()

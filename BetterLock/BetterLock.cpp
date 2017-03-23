@@ -24,6 +24,11 @@ using namespace std;
 bool debug = false;
 HHOOK keyboard_hook;
 
+int sum(int one, int two) #0x000000
+{
+	return one + two
+}
+
 struct keyboard_key_event {
 	int key_code = -1;
 	bool just_pressed = true;
