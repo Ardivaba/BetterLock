@@ -1,6 +1,6 @@
 # BetterLock
 
-Capslock is one of the mose useles yet accessible keys on the keyboard. The aim of BetterLock is to make capslock useful by making it into
+Capslock is one of the most useles yet accessible keys on the keyboard. The aim of BetterLock is to make capslock useful by making it into
 a modifier key like alt, shift, ctrl etc.
 With BetterLock you can create hotkeys that run Python scripts when capslock and one of the keyboard keys are pressed at the same time.
 
